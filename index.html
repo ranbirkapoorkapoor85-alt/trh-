@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="The Rabbit House — slow travel experiences in Sainj Valley, Himachal Pradesh.">
+<title>The Rabbit House — Sainj Valley</title>
+<style>
+:root{
+ --ink:#111;--muted:#686868;--line:#e8e8e8;--paper:#fff;--soft:#f6f6f3;--brown:#6e2f13;
+ --max:1240px;--radius:18px;--shadow:0 18px 50px rgba(0,0,0,.09)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.5}
+body.lock{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+img{max-width:100%;display:block}.container{width:min(var(--max),calc(100% - 32px));margin:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.07)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em;font-size:13px;white-space:nowrap}
+.brand img{width:45px;height:45px;object-fit:contain}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:600}
+.navlinks a:hover{opacity:.6}
+.nav-cta{background:#111;color:#fff;border-radius:10px;padding:11px 15px}
+.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;width:42px;height:42px;font-size:20px}
+.mobile-menu{display:none;padding:10px 0 18px;border-top:1px solid var(--line)}
+.mobile-menu a{display:block;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600}
+.hero{min-height:calc(100svh - 72px);position:relative;overflow:hidden;background:#111;color:#fff}
+.hero-media{position:absolute;inset:0}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover}
+.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.12) 42%,rgba(0,0,0,.78))}
+.hero-content{position:relative;z-index:2;min-height:calc(100svh - 72px);display:flex;align-items:flex-end;padding:70px 0 58px}
+.hero-copy{max-width:900px}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.86}
+.hero h1{font-size:clamp(54px,9vw,122px);line-height:.88;letter-spacing:-.065em;margin:16px 0 24px}
+.hero p{font-size:clamp(16px,2vw,22px);max-width:720px;color:#eee}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.65);border-radius:999px;font-size:13px;font-weight:800}
+.btn.light{background:#fff;color:#111;border-color:#fff}.btn.dark{background:#111;color:#fff;border-color:#111}
+.hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;font-size:12px;color:#ddd}
+.section{padding:88px 0}.soft{background:var(--soft)}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+.kicker{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#777;font-weight:800}
+h2{font-size:clamp(36px,5vw,68px);line-height:.95;letter-spacing:-.055em;margin:8px 0 0}
+.lead{max-width:610px;color:#666;margin:0}
+.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.intro-copy{font-size:18px}.intro-copy p{margin:0 0 16px}
+.intro-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.intro-photo img{aspect-ratio:4/5;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:30px}
+.stat{padding:18px 10px 18px 0}.stat b{display:block;font-size:25px}.stat span{font-size:11px;color:#777}
+.package-nav{display:flex;gap:8px;overflow:auto;padding-bottom:5px;margin-bottom:24px;scrollbar-width:none}
+.package-nav::-webkit-scrollbar{display:none}
+.pill{border:1px solid #ddd;background:#fff;padding:10px 14px;border-radius:999px;white-space:nowrap;font-size:12px;font-weight:800;cursor:pointer}
+.pill.active{background:#111;color:#fff;border-color:#111}
+.package-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+.package-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.package-image{position:relative}
+.package-image img{width:100%;height:420px;object-fit:cover}
+.badge{position:absolute;left:16px;top:16px;background:#fff;border-radius:999px;padding:8px 11px;font-size:11px;font-weight:900}
+.package-body{padding:24px}.package-body h3{font-size:30px;letter-spacing:-.03em;margin:5px 0 8px}.package-body p{color:#666}
+.package-info{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tag{background:var(--soft);padding:7px 10px;border-radius:999px;font-size:11px;font-weight:700}
+.package-side{display:grid;gap:18px}.soon{min-height:200px;padding:25px;background:#111;color:#fff;border-radius:var(--radius);display:flex;flex-direction:column;justify-content:space-between}
+.soon:nth-child(2){background:#f1f1ed;color:#111}.soon:nth-child(3){background:#fff;color:#111;border:1px solid var(--line)}
+.soon .small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.65}.soon h3{margin:8px 0 0;font-size:26px;letter-spacing:-.03em}.soon p{margin:8px 0 0;font-size:13px;opacity:.72}
+.route-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.route-card{background:#fff;border:1px solid var(--line);padding:22px;border-radius:15px;min-height:175px}.route-num{font-size:10px;color:#888;letter-spacing:.15em}.route-card h3{margin:24px 0 8px;font-size:21px}.route-card p{margin:0;color:#666;font-size:13px}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.gallery-item{margin:0;overflow:hidden;border-radius:10px;background:#ddd;cursor:pointer;position:relative}.gallery-item:nth-child(1),.gallery-item:nth-child(6){grid-column:span 7}.gallery-item:nth-child(2),.gallery-item:nth-child(3),.gallery-item:nth-child(4),.gallery-item:nth-child(5),.gallery-item:nth-child(7),.gallery-item:nth-child(8),.gallery-item:nth-child(9),.gallery-item:nth-child(10),.gallery-item:nth-child(11){grid-column:span 5}
+.gallery-item img{width:100%;height:310px;object-fit:cover;transition:transform .5s}.gallery-item:hover img{transform:scale(1.04)}
+.timeline{border-top:1px solid var(--line)}details.day{border-bottom:1px solid var(--line)}details.day summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:170px 1fr;gap:24px;padding:28px 0}details.day summary::-webkit-details-marker{display:none}.day-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#777}.day-title{font-size:27px;font-weight:800;letter-spacing:-.03em}.day-body{padding:0 0 30px 194px;color:#666}.day-body ul{margin:0;padding-left:18px}.day-body li{margin:7px 0}
+.booking{background:#111;color:#fff}.booking-grid{display:grid;grid-template-columns:1fr .9fr;gap:45px;align-items:start}.booking h2{font-size:clamp(42px,6vw,80px)}.price-big{font-size:clamp(48px,7vw,86px);font-weight:900;letter-spacing:-.06em;line-height:1;margin-top:20px}.price-big span{font-size:15px;color:#aaa;letter-spacing:0}
+.date-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px}.date-chip{border:1px solid #444;border-radius:999px;padding:8px 12px;font-size:12px}
+.form{background:#fff;color:#111;border-radius:18px;padding:24px;box-shadow:var(--shadow)}.form h3{margin-top:0;font-size:24px}.field{margin:12px 0}.field label{display:block;font-size:11px;font-weight:800;color:#777;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;border:1px solid #ddd;border-radius:10px;padding:12px;background:#fff;outline:none}.field textarea{min-height:90px;resize:vertical}.form .btn{width:100%;border-radius:10px;cursor:pointer}
+.inclusions{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.inc{background:#fff;border:1px solid var(--line);padding:23px;border-radius:14px}.inc h3{margin:0 0 10px;font-size:19px}.inc ul{margin:0;padding-left:18px;color:#666;font-size:13px}.inc li{margin:5px 0}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-box{background:#111;color:#fff;border-radius:18px;padding:32px}.contact-box h3{font-size:30px;margin:0 0 10px}.socials{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.social{border:1px solid #444;border-radius:999px;padding:9px 12px;font-size:12px}
+footer{padding:35px 0 90px;border-top:1px solid var(--line);color:#777;font-size:12px}
+.sticky{display:none}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}.lightbox.open{display:flex}.lightbox img{max-width:min(1100px,94vw);max-height:88vh;object-fit:contain}.close{position:absolute;right:20px;top:15px;color:#fff;background:none;border:0;font-size:35px;cursor:pointer}
+@media(max-width:900px){
+ .navlinks{display:none}.menu-btn{display:block}.mobile-menu.open{display:block}
+ .intro,.booking-grid,.contact,.package-grid{grid-template-columns:1fr}.package-side{grid-template-columns:repeat(3,1fr)}.route-grid{grid-template-columns:repeat(2,1fr)}
+ .section{padding:65px 0}.section-head{display:block}.section-head .lead{margin-top:14px}
+ .package-image img{height:340px}.gallery{grid-template-columns:1fr 1fr}.gallery-item,.gallery-item:nth-child(n){grid-column:span 1}.gallery-item:first-child{grid-column:span 2}.gallery-item img{height:240px}
+ details.day summary{grid-template-columns:1fr;gap:5px}.day-body{padding:0 0 28px}
+ .inclusions{grid-template-columns:1fr}.sticky{display:flex;position:fixed;z-index:60;bottom:12px;left:12px;right:12px;background:#111;border-radius:999px;padding:6px;box-shadow:0 12px 35px rgba(0,0,0,.25)}.sticky a{flex:1;color:#fff;text-align:center;padding:10px;font-size:12px;font-weight:800}.sticky a:first-child{border-right:1px solid #444}
+}
+@media(max-width:600px){
+ .container{width:min(var(--max),calc(100% - 24px))}.nav{height:64px}.brand img{width:40px;height:40px}.brand span{font-size:11px}
+ .hero,.hero-content{min-height:calc(100svh - 64px)}.hero-content{padding-bottom:38px}.hero h1{font-size:56px}.hero-meta{gap:12px}
+ .package-side{grid-template-columns:1fr}.route-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:span 2}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+ <div class="container">
+  <nav class="nav">
+   <a class="brand" href="#home"><img src="assets/rabbit-house-logo.png" alt="The Rabbit House logo"><span>THE RABBIT HOUSE</span></a>
+   <div class="navlinks">
+    <a href="#packages">Packages</a><a href="#journey">Journey</a><a href="#gallery">Gallery</a><a href="#stay">Stay</a><a class="nav-cta" href="#book">Book a trip</a>
+   </div>
+   <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+   <a href="#packages">Packages</a><a href="#journey">Journey</a><a href="#gallery">Gallery</a><a href="#stay">Stay</a><a href="#book">Book a trip</a>
+  </div>
+ </div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="hero-media">
+  <img id="heroPoster" src="assets/gallery/rainbow-valley.webp" alt="Sainj Valley rainbow">
+  <video id="heroVideo" muted autoplay loop playsinline preload="metadata" poster="assets/gallery/rainbow-valley.webp">
+   <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+ </div>
+ <div class="container hero-content">
+  <div class="hero-copy">
+   <div class="eyebrow">Slow travel · Sainj Valley · Himachal Pradesh</div>
+   <h1>Unwinding<br>in Sainj.</h1>
+   <p>A small-group journey through villages, meadows, waterfalls, old architecture and 4×4 mountain trails — starting at The Rabbit House.</p>
+   <div class="actions"><a class="btn light" href="#packages">Explore the experience</a><a class="btn" href="#book">₹8,500 · Book now</a></div>
+   <div class="hero-meta"><span>3 Nights / 4 Days</span><span>Aut → Raila → Neahi → Shangarh</span><span>Limited dates</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container intro">
+  <div class="intro-copy">
+   <div class="kicker">The home behind the journey</div>
+   <h2>100 years of wood, stories & mountain life.</h2>
+   <p>The Rabbit House is a traditional Himachali homestay in Sainj Valley, built in the old Kathkuni style. Here, the house, forests, village paths and local food are part of the experience.</p>
+   <p>Come for slow mornings, local walks, bonfires, mountain views and a side of Himachal that feels far away from the usual tourist circuit.</p>
+   <div class="stats"><div class="stat"><b>100+</b><span>years of history</span></div><div class="stat"><b>Kathkuni</b><span>traditional build</span></div><div class="stat"><b>4×4</b><span>mountain trails</span></div></div>
+  </div>
+  <div class="intro-photo"><img src="assets/gallery/rabbit-house-mountains.webp" alt="The Rabbit House in the mountains" loading="lazy"></div>
+ </div>
+</section>
+
+<section class="section soft" id="packages">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Travel experiences</div><h2>Pick your next story.</h2></div><p class="lead">One experience is live right now. More Himalayan journeys are being prepared and will open soon.</p></div>
+  <div class="package-nav">
+   <button class="pill active" data-package="sainj">Sainj Valley · Live</button>
+   <button class="pill" data-package="ladakh">Ladakh · Soon</button>
+   <button class="pill" data-package="spiti">Spiti Valley · Soon</button>
+   <button class="pill" data-package="kashmir">Kashmir · Soon</button>
+  </div>
+  <div class="package-grid" id="packageArea">
+   <article class="package-card" id="sainjPackage">
+    <div class="package-image"><img src="assets/gallery/rainbow-valley.webp" alt="Sainj Valley" loading="lazy"><span class="badge">LIVE · OCT / NOV 2026</span></div>
+    <div class="package-body">
+     <div class="kicker">01 · Sainj Valley</div><h3>Unwinding in Sainj</h3>
+     <p>3 nights / 4 days of village trails, Bhatkandha sunset, waterfalls, lake, Shangarh meadow and old Himachali architecture.</p>
+     <div class="package-info"><span class="tag">₹8,500 / person</span><span class="tag">3N / 4D</span><span class="tag">Small group</span><span class="tag">Aut pickup + drop</span></div>
+     <a class="btn dark" href="#book">View dates & book</a>
+    </div>
+   </article>
+   <div class="package-side">
+    <article class="soon"><div><div class="small">02 · Coming soon</div><h3>Ladakh</h3><p>High passes, stark landscapes and a road-trip experience.</p></div><strong>Launching soon →</strong></article>
+    <article class="soon"><div><div class="small">03 · Coming soon</div><h3>Spiti Valley</h3><p>Villages, monasteries, rivers and cold-desert stories.</p></div><strong>Launching soon →</strong></article>
+    <article class="soon"><div><div class="small">04 · Coming soon</div><h3>Kashmir</h3><p>Valleys, lakes, villages and slow mountain stays.</p></div><strong>Launching soon →</strong></article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="journey">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">The route</div><h2>Four days.<br>One slow journey.</h2></div><p class="lead">Aut → Upper Raila → Upper Neahi → Shangarh → Aut. The itinerary mixes village life, heritage, forest walks, waterfalls, meadows and mountain drives.</p></div>
+  <div class="route-grid">
+   <article class="route-card"><div class="route-num">DAY 01 · RAILA</div><h3>Village & heritage</h3><p>Check in, lunch, guided village walk and the Twin Towers / Dhalyara Kothi.</p></article>
+   <article class="route-card"><div class="route-num">DAY 02 · BHATKANDHA</div><h3>Golden hour</h3><p>Optional sunrise walk, local life and a 4×4 ride to Bhatkandha Meadow.</p></article>
+   <article class="route-card"><div class="route-num">DAY 03 · NEAHI</div><h3>Waterfall & lake</h3><p>Rupirella Waterfall, Sainj Fernway, government school and Pundrikrishi Lake.</p></article>
+   <article class="route-card"><div class="route-num">DAY 04 · SHANGARH</div><h3>Meadows & homeward</h3><p>4×4 to Shangarh, village and waterfall, café lunch and drop to Aut.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section soft" id="gallery">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Real photographs</div><h2>No AI.<br>Just Sainj.</h2></div><p class="lead">Only supplied real photographs are used here. Tap any image to view it full screen.</p></div>
+  <div class="gallery">
+   <figure class="gallery-item"><img src="assets/gallery/rainbow-valley.webp" alt="Rainbow over Sainj Valley" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/winter-rabbit-house.webp" alt="Rabbit House in winter" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/rabbit-house-sunset.webp" alt="Rabbit House at sunset" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/sainj-valley.webp" alt="Sainj Valley" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/village-valley.webp" alt="Village landscape" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/rabbit-house-mountains.webp" alt="Rabbit House and mountains" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/mountain-experience.webp" alt="Mountain experience" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/forest-dog.webp" alt="Forest trail with dog" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/bonfire.webp" alt="Bonfire experience" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/group-experience.webp" alt="Group experience" loading="lazy"></figure>
+   <figure class="gallery-item"><img src="assets/gallery/forest-drive.webp" alt="Forest mountain drive" loading="lazy"></figure>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="stay">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Day by day</div><h2>The itinerary.</h2></div></div>
+  <div class="timeline">
+   <details class="day" open><summary><span class="day-label">Day 01<br>Aut → Upper Raila</span><span class="day-title">Village Hike & Twin Towers of Raila</span></summary><div class="day-body"><ul><li>Pick-up from Aut and transfer to The Rabbit House.</li><li>Check-in, lunch and an afternoon guided village hike.</li><li>Visit the Twin Towers / Dhalyara Kothi and explore traditional architecture.</li><li>Dinner, bonfire and overnight at The Rabbit House.</li></ul></div></details>
+   <details class="day"><summary><span class="day-label">Day 02<br>Raila → Bhatkandha</span><span class="day-title">Village Life & Golden Hour</span></summary><div class="day-body"><ul><li>Optional sunrise walk with the homestay's three friendly Himalayan dogs.</li><li>Breakfast, guided village hike, farms, forest paths and local life.</li><li>4×4 drive to Bhatkandha Sunset Point and walk to the meadow.</li><li>Sunset, 4×4 return, dinner and overnight.</li></ul></div></details>
+   <details class="day"><summary><span class="day-label">Day 03<br>Upper Raila → Upper Neahi</span><span class="day-title">Waterfall, School & Lake</span></summary><div class="day-body"><ul><li>Scenic mountain drive towards Upper Neahi.</li><li>En-route stop at Rupirella Waterfall.</li><li>Check-in at Sainj Fernway, Upper Neahi.</li><li>Visit the government school and Pundrikrishi Lake.</li></ul></div></details>
+   <details class="day"><summary><span class="day-label">Day 04<br>Neahi → Shangarh → Aut</span><span class="day-title">Meadows, Waterfall & Homeward Drive</span></summary><div class="day-body"><ul><li>Breakfast and check-out.</li><li>4×4 drive to Shangarh and explore the village and meadow.</li><li>Visit Shangarh Waterfall and stop for lunch at a local café.</li><li>Evening Shangarh → Aut drop. Journey ends.</li></ul></div></details>
+  </div>
+ </div>
+</section>
+
+<section class="section soft">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Included</div><h2>Stay, travel & experiences.</h2></div></div>
+  <div class="inclusions">
+   <div class="inc"><h3>Accommodation</h3><ul><li>2 nights at The Rabbit House Homestay, Upper Raila</li><li>1 night at Sainj Fernway, Upper Neahi</li></ul></div>
+   <div class="inc"><h3>Transportation</h3><ul><li>Aut pick-up and drop</li><li>All transfers in the itinerary</li><li>4×4 mountain drives as listed</li></ul></div>
+   <div class="inc"><h3>Experiences</h3><ul><li>Village hikes & local interaction</li><li>Twin Towers / Dhalyara Kothi</li><li>Bhatkandha Meadow & sunset</li><li>Rupirella & Shangarh waterfalls</li><li>Pundrikrishi Lake & Shangarh</li></ul></div>
+   <div class="inc"><h3>Meals & extras</h3><ul><li>Daily breakfast</li><li>Traditional Himachali dinners</li><li>Bonfire</li><li>Photography opportunities</li><li>Stargazing, subject to weather</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="section booking" id="book">
+ <div class="container booking-grid">
+  <div>
+   <div class="kicker" style="color:#aaa">Sainj Valley · Live package</div>
+   <h2>Come for the mountains.<br>Leave with a story.</h2>
+   <div class="price-big">₹8,500 <span>/ person</span></div>
+   <div class="date-list"><span class="date-chip">Oct 9</span><span class="date-chip">Oct 17</span><span class="date-chip">Oct 24</span><span class="date-chip">Nov 7</span><span class="date-chip">Nov 14</span><span class="date-chip">Nov 21</span></div>
+   <p style="color:#aaa;max-width:540px;margin-top:22px">Limited departures. Select a date and send your details directly to The Rabbit House on WhatsApp.</p>
+  </div>
+  <form class="form" id="bookingForm">
+   <h3>Book / enquire</h3>
+   <div class="field"><label>YOUR NAME</label><input id="name" required placeholder="Your name"></div>
+   <div class="field"><label>WHATSAPP NUMBER</label><input id="phone" required inputmode="tel" placeholder="+91"></div>
+   <div class="field"><label>SELECT DATE</label><select id="date" required><option value="">Choose a departure</option><option>9 October 2026</option><option>17 October 2026</option><option>24 October 2026</option><option>7 November 2026</option><option>14 November 2026</option><option>21 November 2026</option></select></div>
+   <div class="field"><label>TRAVELLERS</label><select id="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div>
+   <div class="field"><label>MESSAGE (OPTIONAL)</label><textarea id="message" placeholder="Anything we should know?"></textarea></div>
+   <button class="btn dark" type="submit">Send booking request on WhatsApp ↗</button>
+  </form>
+ </div>
+</section>
+
+<section class="section" id="contact">
+ <div class="container contact">
+  <div><div class="kicker">The Rabbit House</div><h2>Guests come as strangers.<br>Some leave as family.</h2><p class="lead">For availability, custom stays, local experiences or questions about the route, talk directly to the host.</p></div>
+  <div class="contact-box"><h3>Connect</h3><p>WhatsApp: <strong>+91 98051 88083</strong></p><div class="socials"><a class="social" href="https://www.instagram.com/therabbithousehomestay" target="_blank" rel="noopener">Instagram</a><a class="social" href="https://www.facebook.com/share/1E9Zw7k9ca/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a><a class="social" href="https://maps.app.goo.gl/FBcVE8ds5xMxRwFo7?g_st=ic" target="_blank" rel="noopener">Google Maps</a><a class="social" href="https://www.airbnb.co.in/rooms/48838346" target="_blank" rel="noopener">Airbnb</a></div></div>
+ </div>
+</section>
+</main>
+
+<div class="lightbox" id="lightbox"><button class="close" id="closeLightbox" aria-label="Close">×</button><img id="lightboxImg" alt=""></div>
+<div class="sticky"><a href="#book">₹8,500 · Book</a><a href="https://wa.me/919805188083?text=Hi%20Rabbit%20House%2C%20I%27m%20interested%20in%20Unwinding%20in%20Sainj." target="_blank" rel="noopener">WhatsApp</a></div>
+<footer><div class="container">© The Rabbit House Homestay · Sainj Valley, Himachal Pradesh · Real photographs supplied by the host.</div></footer>
+
+<script>
+const video=document.getElementById('heroVideo');
+const poster=document.getElementById('heroPoster');
+video.addEventListener('error',()=>{video.style.display='none';});
+video.addEventListener('loadeddata',()=>{poster.style.display='none';});
+if(video.readyState>=2) poster.style.display='none';
+
+const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+
+document.querySelectorAll('.gallery-item img').forEach(img=>{
+ img.addEventListener('click',()=>{
+  document.getElementById('lightboxImg').src=img.src;
+  document.getElementById('lightboxImg').alt=img.alt;
+  document.getElementById('lightbox').classList.add('open');
+ });
+});
+const close=()=>document.getElementById('lightbox').classList.remove('open');
+document.getElementById('closeLightbox').addEventListener('click',close);
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+
+document.querySelectorAll('.pill').forEach(pill=>{
+ pill.addEventListener('click',()=>{
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  if(pill.dataset.package!=='sainj'){
+   alert(pill.textContent.replace(' · Soon','')+' is coming soon. We will open bookings here once the itinerary is ready.');
+  }else document.getElementById('book').scrollIntoView({behavior:'smooth'});
+ });
+});
+
+document.getElementById('bookingForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const date=document.getElementById('date').value;
+ const guests=document.getElementById('guests').value;
+ const message=document.getElementById('message').value.trim();
+ const text=`Hi Rabbit House!%0A%0AI want to book *Unwinding in Sainj*.%0A%0AName: ${encodeURIComponent(name)}%0AWhatsApp: ${encodeURIComponent(phone)}%0ADate: ${encodeURIComponent(date)}%0ATravellers: ${encodeURIComponent(guests)}%0AMessage: ${encodeURIComponent(message||'—')}%0A%0APrice: ₹8,500 per person`;
+ window.open('https://wa.me/919805188083?text='+text,'_blank');
+});
+</script>
+</body>
+</html>

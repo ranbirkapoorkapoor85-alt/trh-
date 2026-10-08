@@ -1,0 +1,1 @@
+VIDEO READY: put your cinematic hero video here as assets/hero.mp4. The website will automatically use it on the homepage. If it is absent, the supplied photo poster is shown instead.
